@@ -1,0 +1,25 @@
+:root {
+  --color-Maximum-Red: #d62828;
+  --btn-danger-color: var(--color-Maximum-Red);
+  --color-prusian-blue: #023047;
+  --btn-color: var(--color-prusian-blue);
+}
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+input {
+  font-family: "Raleway", sans-serif;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Mis modificaciones */
+.display-4 {
+  text-align: center;
+}

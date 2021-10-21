@@ -1,0 +1,128 @@
+.card {
+  /* Diego */
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  border-radius: 0.5rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 2fr;
+  align-items: center;
+
+  position: relative;
+}
+.card:hover {
+  opacity: 1;
+  transform: scale(1.025);
+  transition: 0.2s ease-in;
+}
+@media screen and (min-width: 576px) {
+  .card {
+    width: 25rem;
+  }
+}
+.closeBtn {
+  /*  */
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  font-size: 1.5rem;
+
+  color: var(--btn-danger-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.25rem;
+  /* algunas veces el 100% no crea un circulo perfecto */
+  border-radius: 9999px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+  background-color: transparent;
+
+  transition: 250ms;
+}
+.closeBtn:hover {
+  color: white;
+  background-color: var(--btn-danger-color);
+}
+.city {
+  /* Diego */
+  grid-column: 1 / span 3;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+/* .card {
+  /* width: 250px;
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    ".        .    boton"
+    "ciudad ciudad ciudad"
+    "min    max    img"
+    "temMin temMax img";
+  padding: 10px;
+  background-color: cadetblue;
+  border-radius: 20px; 
+  
+} */
+
+/* .closeBtn {
+  /* grid-area: boton;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; 
+} */
+/* .city {
+  /* grid-area: ciudad;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+
+} */
+.temMin {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: temMin; */
+}
+.min {
+  /* display: flex;
+  justify-content: center;
+  align-self: center;
+  grid-area: min;
+  margin: 0px; */
+}
+.temMax {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: temMax; */
+}
+.max {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: max;
+  margin: 0px; */
+}
+/* .closeBtn button {
+  /* width: 30px;
+  height: 30px;
+  background-color: var(--color-boton);
+  color: aliceblue;
+  border: none;
+  border-radius: 2px; 
+  
+} */
+
+.imgC {
+  /* grid-area: img;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; */
+}
