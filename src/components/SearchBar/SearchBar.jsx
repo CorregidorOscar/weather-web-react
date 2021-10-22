@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './SearchBar/SearchBar.module.css'
+import style from './SearchBar.module.css'
 import { IoSearchOutline } from 'react-icons/io5'
 import { useState } from 'react';
 export default function SearchBar({ onSearch }) {
@@ -8,9 +8,11 @@ export default function SearchBar({ onSearch }) {
 
 
   function handleOnSearch(e) {
+    e.preventDefault();
     if (typeof onSearch === "function") {
       // const input = document.getElementById("search-bar-input");
       // setCity(onSearch(input.value));
+      console.log(city);
       onSearch(city);
     }
   }
@@ -20,12 +22,13 @@ export default function SearchBar({ onSearch }) {
     setCity(c);
   }
   return (
-    <div className={style.bar}>
+    // para usar enter se usa un form
+    <form className={style.bar} onSubmit={handleOnSearch}>
       <input placeholder='Ciudad' id="search-bar-input" onChange={handleChange}/>
-      <button onClick={handleOnSearch}>
+      <button type= 'submit'>
         <IoSearchOutline/>
       </button>
-    </div>
+    </form>
   );
 }
 // export default function SearchBar({ onSearch }) {

@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 // import Card from './components/Card.jsx';
-import Cards from './components/Cards.jsx';
-import Nav from './components/Nav.jsx';
+import Cards from './components/Cards/Cards.jsx';
+import Nav from './components/Nav/Nav.jsx';
 // import data, { Cairns } from './data.js';
 import { useState } from 'react'
 
@@ -42,7 +42,8 @@ function App() {
             latitud: recurso.coord.lat,
             longitud: recurso.coord.lon
           };
-          setCities(oldCities => [...oldCities, ciudad]);
+          if (!cities.find((e) => e.name === ciudad.name)) setCities(oldCities => [...oldCities, ciudad]);
+          else alert("La ciudad ya se encuentra en la lista")
           // handleAddCity(ciudad);
         } else {
           alert("Ciudad no encontrada");

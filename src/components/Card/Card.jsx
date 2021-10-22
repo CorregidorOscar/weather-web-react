@@ -1,13 +1,13 @@
 import React from 'react';
-import style from './Card/Card.module.css'
+import style from './Card.module.css'
 import PropTypes from 'prop-types'
 import { IoCloseCircleOutline } from 'react-icons/io5'
-import CardTemp from './CardTemp'
+import CardTemp from '../CardTemp/CardTemp'
 
-export default function Card({ max, min, name, img, onClose }) {
+export default function Card({ max, min, name, img, onClose, id}) {
   // acá va tu código
   function handleOnClose() {
-    if (typeof onClose === "function") onClose();
+    if (typeof onClose === "function") onClose(id);
   }
 
   return (

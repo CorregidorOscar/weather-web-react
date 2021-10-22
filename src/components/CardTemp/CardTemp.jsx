@@ -1,4 +1,4 @@
-import style from './CardTemp/CardTemp.module.css'
+import style from './CardTemp.module.css'
 export default function CardTemp({ label, value }) {
     return (
         <div className={style.cardTemp}>

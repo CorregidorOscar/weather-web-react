@@ -1,9 +1,7 @@
-import Logo from '../img/logoHenry.png';
+import Logo from '../../img/logoHenry.png';
 // import logo from '/src/HenryLogo.jpg'
-import SearchBar from './SearchBar';
-import style from './Nav/Nav.module.css'
-
-import './Nav/Nav.module.css';
+import SearchBar from '../SearchBar/SearchBar';
+import style from './Nav.module.css'
 
 export default function Nav({onSearch}) {
   return (

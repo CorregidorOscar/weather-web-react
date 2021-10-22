@@ -37,7 +37,8 @@ body {
   background: url(./img/clouds-g8483f2e6e_1920.png); */
   height: 100%;
   background: url(https://i.pinimg.com/originals/44/6e/3b/446e3b79395a287ca32f7977dd83b290.jpg);
-  background-size: cover;
+  background-size: auto;
+  background-repeat: no-repeat;
 }
 
 .firefly {
