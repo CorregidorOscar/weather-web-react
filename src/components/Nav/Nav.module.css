@@ -1,0 +1,15 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background-color: dimgrey;
+}
+.logTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logTitle span {
+  margin-left: 1rem;
+  font-size: xx-large;
+}
