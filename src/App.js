@@ -10,19 +10,19 @@ const apiKey = '4ae2636d8dfbdc3044bede63951a019b';
 function App() {
   const [cities, setCities] = useState([]);
 
-  function handleAddCity(city) {
-    setCities((prev) => {
-      return [...prev, city]
-    });
-  }
+  // function handleAddCity(city) {
+  //   setCities((prev) => {
+  //     return [...prev, city]
+  //   });
+  // }
 
-  function handleRemoveCity(cityID) {
-    setCities((prev) => {
-      return prev.filter((c) => {
-        return c.id !== cityID;
-      })
-    });
-  }
+  // function handleRemoveCity(cityID) {
+  //   setCities((prev) => {
+  //     return prev.filter((c) => {
+  //       return c.id !== cityID;
+  //     })
+  //   });
+  // }
   function onSearch(ciudad) {
     // console.log(apiKey)
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`)
