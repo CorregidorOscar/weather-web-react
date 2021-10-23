@@ -4,7 +4,7 @@ import { IoSearchOutline } from 'react-icons/io5'
 import { useState } from 'react';
 export default function SearchBar({ onSearch }) {
   // acá va tu código
-  const [city,setCity] = useState({});
+  const [city, setCity] = useState({});
 
 
   function handleOnSearch(e) {
@@ -12,21 +12,21 @@ export default function SearchBar({ onSearch }) {
     if (typeof onSearch === "function") {
       // const input = document.getElementById("search-bar-input");
       // setCity(onSearch(input.value));
-      console.log(city);
+
       onSearch(city);
     }
   }
 
-  function handleChange(e){
+  function handleChange(e) {
     const c = e.target.value;
     setCity(c);
   }
   return (
     // para usar enter se usa un form
     <form className={style.bar} onSubmit={handleOnSearch}>
-      <input placeholder='Ciudad' id="search-bar-input" onChange={handleChange}/>
-      <button type= 'submit'>
-        <IoSearchOutline/>
+      <input placeholder='Ciudad' id="search-bar-input" onChange={handleChange} />
+      <button type='submit'>
+        <IoSearchOutline />
       </button>
     </form>
   );

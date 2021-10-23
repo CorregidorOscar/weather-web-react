@@ -21,15 +21,13 @@ export default function Card({ max, min, name, img, onClose, id }) {
       <NavLink to={`/ciudad/${id}`} className={style.navLink}>
         <span className={style.city}>{name}</span>
       </NavLink>
-      <div className={style.clima}>
-        <CardTemp label="Min" value={min} />
-        <CardTemp label="Max" value={max} />
-        <img
-          src={`http://openweathermap.org/img/wn/${img}@2x.png`}
-          alt="icono del clima"
-          className={style.img}
-        />
-      </div>
+      <CardTemp label="Min" value={min} />
+      <CardTemp label="Max" value={max} />
+      <img
+        src={`http://openweathermap.org/img/wn/${img}@2x.png`}
+        alt="icono del clima"
+        className={style.img}
+      />
       {/* <div className={style.closeBtn}>
         <button onClick={onClose}>X</button>
       </div>

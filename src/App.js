@@ -9,7 +9,7 @@ import { Route } from 'react-router';
 import About from './components/About/About';
 import Ciudad from './components/Ciudad/Ciudad';
 
-const apiKey = '4ae2636d8dfbdc3044bede63951a019b';
+const apiKey = process.env.REACT_APP_API_KEY;
 function App() {
   const [cities, setCities] = useState([]);
 
