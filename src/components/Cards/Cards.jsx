@@ -5,10 +5,10 @@ import style from './Cards.module.css'
 export default function Cards({ cities, onClose }) {
   // acá va tu código
   // tip, podés usar un map
-  if(cities){
-  return (<div className={style.cards}>
-    
-    {/* {cities.map((city, index) => {
+  if (cities) {
+    return (<div className={style.cards}>
+
+      {/* {cities.map((city, index) => {
       return <Card max={city.main.temp_max}
         min={city.main.temp_min}
         name={city.name}
@@ -18,7 +18,7 @@ export default function Cards({ cities, onClose }) {
 
       </Card>
     })} */}
-    {cities.map((c) => (
+      {cities.map((c) => (
         <Card
           // key={city.id}
           // min={city.main.temp_min}
@@ -27,18 +27,18 @@ export default function Cards({ cities, onClose }) {
           // img={city.weather[0].icon}
           // onClose={() => alert(city.name)}
           max={c.max}
-            min={c.min}
-            name={c.name}
-            img={c.img}
-            onClose={() => onClose(c.id)}
-            key={`${c.id}${Math.random()*100}`}
-            id={`${c.id}${Math.random()*100}`}
-         
+          min={c.min}
+          name={c.name}
+          img={c.img}
+          onClose={() => onClose(c.id)}
+          key={`${c.id}${Math.random() * 100}`}
+          id={c.id}
+
         />
       ))}
 
-  </div>);
-  }else{
+    </div>);
+  } else {
     return (<div>Sin ciudades</div>)
   }
 };

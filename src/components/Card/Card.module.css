@@ -27,8 +27,8 @@
 .closeBtn {
   /*  */
   position: absolute;
-  right: 0.5rem;
-  top: 0.5rem;
+  right: 0.1rem;
+  top: 0.1rem;
   font-size: 1.5rem;
 
   color: var(--btn-danger-color);
@@ -50,13 +50,30 @@
   color: white;
   background-color: var(--btn-danger-color);
 }
+
+.navLink {
+  grid-column: 1 / span 3;
+  text-decoration: none;
+  color: var(--color-prusian-blue);
+  margin-top: 1.5rem;
+}
 .city {
   /* Diego */
-  grid-column: 1 / span 3;
   font-weight: 700;
   font-size: 1.5rem;
+  color: white;
 }
-
+.city:hover {
+  color: var(--color-prusian-blue);
+}
+.clima {
+  width: 100%;
+  display: flex;
+}
+.img {
+  width: 7rem;
+  height: 7rem;
+}
 /* .card {
   /* width: 250px;
   height: 200px;

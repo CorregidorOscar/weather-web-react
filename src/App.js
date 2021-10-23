@@ -5,6 +5,9 @@ import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav.jsx';
 // import data, { Cairns } from './data.js';
 import { useState } from 'react'
+import { Route } from 'react-router';
+import About from './components/About/About';
+import Ciudad from './components/Ciudad/Ciudad';
 
 const apiKey = '4ae2636d8dfbdc3044bede63951a019b';
 function App() {
@@ -73,32 +76,38 @@ function App() {
     setCities(oldCities => oldCities.filter(c => c.id !== id));
   }
   // onClose(e => (alert('hola')));
-
+  function onFilter(ciudadId) {
+    let ciudad = cities.filter(c => c.id === parseInt(ciudadId));
+    if (ciudad.length > 0) {
+      return ciudad[0];
+    } else {
+      return null;
+    }
+  }
   return (
     <div className="App">
-      <Nav onSearch={onSearch} />
-      <Cards cities={cities} onClose={onClose} />
-      {/* <div className='card'>
-        <Card
-          max={Cairns.main.temp_max}
-          min={Cairns.main.temp_min}
-          name={Cairns.name}
-          img={Cairns.weather[0].icon}
-          onClose={() => alert(Cairns.name)}
-        />
-      </div>
-      <hr />
-      <div className='card'>
-        <Cards
-          cities={data}
-        />
-      </div>
-      <hr />
-      <div className='search'>
-        <SearchBar
-          onSearch={(ciudad) => alert(ciudad)}
-        />
-      </div> */}
+      <Route
+        path='/'
+        render={() => <Nav onSearch={onSearch} />}
+      />
+      {/* <Nav onSearch={onSearch} /> */}
+      <Route
+        path='/about'
+        component={About}
+      />
+      <Route
+        exact path='/'
+        render={() => <Cards cities={cities} onClose={onClose} />}
+      />
+      <Route
+        exact
+        path='/ciudad/:ciudadId'
+        render={({ match }) => <Ciudad
+          // match.params.ciudadId contiene el id de la ciudad seleccionada en el titulo de Card
+          city={onFilter(match.params.ciudadId)}
+        />}
+      />
+
     </div>
   );
 }

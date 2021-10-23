@@ -1,15 +1,26 @@
 .nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.5rem;
   background-color: dimgrey;
+}
+.navLink {
+  text-decoration: none;
+
+  color: var(--color-prusian-blue);
+}
+.navLink:hover {
+  color: white;
 }
 .logTitle {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.5rem;
 }
-.logTitle span {
-  margin-left: 1rem;
-  font-size: xx-large;
+img {
+  margin-right: 0.5rem;
+  width: 30px;
+  height: 30px;
 }
