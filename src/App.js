@@ -9,7 +9,7 @@ import { Route } from 'react-router';
 import About from './components/About/About';
 import Ciudad from './components/Ciudad/Ciudad';
 
-const apiKey = process.env.REACT_APP_API_KEY;
+const API_KEY = process.env.REACT_APP_API_KEY;
 function App() {
   const [cities, setCities] = useState([]);
 
@@ -28,7 +28,7 @@ function App() {
   // }
   function onSearch(ciudad) {
     // console.log(apiKey)
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${API_KEY}&units=metric`)
       .then(r => r.json())
       .then((recurso) => {
         if (recurso.main !== undefined) {
