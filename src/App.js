@@ -9,7 +9,10 @@ import { Route } from 'react-router';
 import About from './components/About/About';
 import Ciudad from './components/Ciudad/Ciudad';
 
+
 const API_KEY = process.env.REACT_APP_API_KEY;
+
+
 function App() {
   const [cities, setCities] = useState([]);
 
@@ -28,7 +31,7 @@ function App() {
   // }
   function onSearch(ciudad) {
     // console.log(apiKey)
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${API_KEY}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${API_KEY}&lang=es&units=metric`)
       .then(r => r.json())
       .then((recurso) => {
         if (recurso.main !== undefined) {
@@ -40,12 +43,13 @@ function App() {
             wind: recurso.wind.speed,
             temp: recurso.main.temp,
             name: recurso.name,
-            weather: recurso.weather[0].main,
+            country: recurso.sys.country,
+            weather: recurso.weather[0].description,
             clouds: recurso.clouds.all,
             latitud: recurso.coord.lat,
             longitud: recurso.coord.lon
           };
-          if (!cities.find((e) => e.name === ciudad.name)) setCities(oldCities => [...oldCities, ciudad]);
+          if (!cities.find((e) => e.id === ciudad.id)) setCities(oldCities => [...oldCities, ciudad]);
           else alert("La ciudad ya se encuentra en la lista")
           // handleAddCity(ciudad);
         } else {

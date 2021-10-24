@@ -1,4 +1,4 @@
-import Logo from '../../img/logoHenry.png';
+import Logo from '../../img/ghostSinFondo2.png'
 // import logo from '/src/HenryLogo.jpg'
 import SearchBar from '../SearchBar/SearchBar';
 import style from './Nav.module.css'
@@ -10,7 +10,7 @@ export default function Nav({ onSearch }) {
       <Link to='/' className={style.navLink}>
         <span className={style.logTitle}>
           <img src={Logo} alt="img-logo" />
-          Henry - Weather App
+          Weather App
         </span>
       </Link>
       <NavLink to='/about' className={style.navLink}>

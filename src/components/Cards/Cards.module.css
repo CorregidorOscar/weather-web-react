@@ -3,7 +3,8 @@
   flex-direction: column;
   gap: 0.5rem;
 
-  color: white;
+  /* color: white; */
+
   /* fondo */
 }
 @media screen and (min-width: 576px) {

@@ -3,6 +3,7 @@
   --btn-danger-color: var(--color-Maximum-Red);
   --color-prusian-blue: #023047;
   --btn-color: var(--color-prusian-blue);
+  --color-dim-grey: #696969;
 }
 /* @keyframes backgroundColorPalette {
   0% {

@@ -5,7 +5,7 @@ export default function Ciudad({ city }) {
     return (
         <div className="ciudad">
             <div className="container">
-                <h2>{city.name}</h2>
+                <h2>{`${city.name}, ${city.country}`}</h2>
                 <div className="info">
                     <div>Temperatura: {city.temp} ºC</div>
                     <div>Clima: {city.weather}</div>

@@ -29,9 +29,10 @@ export default function Cards({ cities, onClose }) {
           max={c.max}
           min={c.min}
           name={c.name}
+          country={c.country}
           img={c.img}
           onClose={() => onClose(c.id)}
-          key={`${c.id}${Math.random() * 100}`}
+          key={c.id}
           id={c.id}
 
         />

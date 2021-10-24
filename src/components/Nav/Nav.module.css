@@ -3,7 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  background-color: dimgrey;
+  background-color: var(--color-dim-grey);
+  font-size: 1.5rem;
 }
 .navLink {
   text-decoration: none;
@@ -17,7 +18,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
 }
 img {
   margin-right: 0.5rem;

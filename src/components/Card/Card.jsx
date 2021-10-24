@@ -6,7 +6,7 @@ import CardTemp from '../CardTemp/CardTemp'
 import { NavLink } from 'react-router-dom';
 // import Nav from '../Nav/Nav';
 
-export default function Card({ max, min, name, img, onClose, id }) {
+export default function Card({ max, min, name, country, img, onClose, id }) {
   // acá va tu código
   function handleOnClose() {
     if (typeof onClose === "function") onClose(id);
@@ -19,15 +19,17 @@ export default function Card({ max, min, name, img, onClose, id }) {
         <IoCloseCircleOutline />
       </button>
       <NavLink to={`/ciudad/${id}`} className={style.navLink}>
-        <span className={style.city}>{name}</span>
+        <span className={style.city}>{`${name}, ${country}`}</span>
       </NavLink>
       <CardTemp label="Min" value={min} />
       <CardTemp label="Max" value={max} />
       <img
-        src={`http://openweathermap.org/img/wn/${img}@2x.png`}
+        src={process.env.PUBLIC_URL + `/${img}.svg`} alt="icono de clima" className={style.img} />
+      {/* <img
+        src={imagen}
         alt="icono del clima"
         className={style.img}
-      />
+      /> */}
       {/* <div className={style.closeBtn}>
         <button onClick={onClose}>X</button>
       </div>
@@ -44,6 +46,16 @@ export default function Card({ max, min, name, img, onClose, id }) {
     </div>)
 };
 
+// cambiar iconos
+// function WeatherIcon({ icon }) {
+//   const e = require('../../img/01n.svg');
+//   switch (icon) {
+//     case "01d":
+//       return <img src={i01d} alt="shower rain" />;
+//     default:
+//       return <img src={process.env.PUBLIC_URL + `/${icon}.svg`} alt="icono de clima" />;
+//   }
+// }
 // controlor tipo de datos del props
 Card.propTypes = {
   max: PropTypes.number,
