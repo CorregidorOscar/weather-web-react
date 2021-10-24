@@ -12,18 +12,18 @@
   /* border: 1px solid #39c; */
   /* background-color: aquamarine; */
   border-color: black;
-  border-radius: 0.5rem;
-  font-size: 1.5rem;
+  border-radius: 1rem;
+  font-size: 1rem;
 }
 .bar input::placeholder {
   font-weight: 300;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 .bar button {
   position: absolute;
   top: calc(0.25rem + 1px);
   right: calc(0.25rem + 1px);
-  font-size: 1.5rem;
+  font-size: 1rem;
 
   color: var(--btn-color);
   display: flex;
@@ -47,6 +47,11 @@
 @media screen and (min-width: 576px) {
   .bar {
     width: 25rem;
+  }
+  .bar button,
+  .bar input,
+  .bar input::placeholder {
+    font-size: 1.5rem;
   }
 }
 

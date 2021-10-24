@@ -4,7 +4,14 @@
   align-items: center;
   padding: 0.5rem;
   background-color: var(--color-dim-grey);
-  font-size: 1.5rem;
+  font-size: 1rem;
+
+  border-radius: 0 0 1rem 1rem;
+}
+@media (min-width: 576px) {
+  .nav {
+    font-size: 1.5rem;
+  }
 }
 .navLink {
   text-decoration: none;
