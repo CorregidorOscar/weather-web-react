@@ -51,7 +51,7 @@
   .bar button,
   .bar input,
   .bar input::placeholder {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 
