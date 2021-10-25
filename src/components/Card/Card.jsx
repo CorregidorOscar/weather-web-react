@@ -4,9 +4,8 @@ import PropTypes from 'prop-types'
 import { IoCloseCircleOutline } from 'react-icons/io5'
 import CardTemp from '../CardTemp/CardTemp'
 import { NavLink } from 'react-router-dom';
-// import Nav from '../Nav/Nav';
 
-export default function Card({ max, min, name, country, img, onClose, id }) {
+export default function Card({ max, temp, min, name, country, img, onClose, id }) {
   // acá va tu código
   function handleOnClose() {
     if (typeof onClose === "function") onClose(id);
@@ -22,6 +21,7 @@ export default function Card({ max, min, name, country, img, onClose, id }) {
         <span className={style.city}>{`${name}, ${country}`}</span>
       </NavLink>
       <CardTemp label="Min" value={min} />
+      <CardTemp label="Actual" value={temp} />
       <CardTemp label="Max" value={max} />
       <img
         src={process.env.PUBLIC_URL + `/${img}.svg`} alt="icono de clima" className={style.img} />

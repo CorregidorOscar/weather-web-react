@@ -24,7 +24,7 @@ export default function SearchBar({ onSearch }) {
   return (
     // para usar enter se usa un form
     <form className={style.bar} onSubmit={handleOnSearch}>
-      <input placeholder='Ciudad' id="search-bar-input" onChange={handleChange} />
+      <input placeholder='Ciudad' id="search-bar-input" onChange={handleChange} autoComplete='off' />
       <button type='submit'>
         <IoSearchOutline />
       </button>

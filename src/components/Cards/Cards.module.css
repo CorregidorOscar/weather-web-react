@@ -10,8 +10,13 @@
 }
 @media screen and (min-width: 576px) {
   .cards {
-    flex-direction: row;
-    justify-content: center;
+    /* flex-direction: row;
+    justify-content: center; */
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
   }
 }
 /* .cards {

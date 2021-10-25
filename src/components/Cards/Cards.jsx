@@ -27,6 +27,7 @@ export default function Cards({ cities, onClose }) {
           // img={city.weather[0].icon}
           // onClose={() => alert(city.name)}
           max={c.max}
+          temp={c.temp}
           min={c.min}
           name={c.name}
           country={c.country}
