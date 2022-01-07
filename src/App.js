@@ -1,38 +1,42 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 // import Card from './components/Card.jsx';
-import Cards from './components/Cards/Cards.jsx';
-import Nav from './components/Nav/Nav.jsx';
+import Cards from "./components/Cards/Cards.jsx";
+import Nav from "./components/Nav/Nav.jsx";
 // import data, { Cairns } from './data.js';
-import { useState } from 'react'
-import { Route } from 'react-router';
-import About from './components/About/About';
-import Ciudad from './components/Ciudad/Ciudad';
-
+import { useState, useEffect } from "react";
+import { Route } from "react-router";
+import About from "./components/About/About";
+import Ciudad from "./components/Ciudad/Ciudad";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-
 function App() {
-  const [cities, setCities] = useState([]);
-
+  const [cities, setCities] = useState(() => {
+    const saved = localStorage.getItem("cities");
+    const initialValue = JSON.parse(saved);
+    return initialValue || [];
+  });
+  useEffect(() => {
+    localStorage.setItem("cities", JSON.stringify(cities));
+  }, [cities]);
   function handleAddCity(city) {
     setCities((prev) => {
-      return [...prev, city]
+      return [...prev, city];
     });
   }
 
   function handleRemoveCity(cityID) {
     setCities((prev) => {
-      return prev.filter((c) =>
-        c.id !== cityID
-      )
+      return prev.filter((c) => c.id !== cityID);
     });
   }
   function onSearch(ciudad) {
     // console.log(apiKey)
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${API_KEY}&lang=es&units=metric`)
-      .then(r => r.json())
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${API_KEY}&lang=es&units=metric`
+    )
+      .then((r) => r.json())
       .then((recurso) => {
         if (recurso.main !== undefined) {
           const ciudad = {
@@ -47,16 +51,15 @@ function App() {
             weather: recurso.weather[0].description,
             clouds: recurso.clouds.all,
             latitud: recurso.coord.lat,
-            longitud: recurso.coord.lon
+            longitud: recurso.coord.lon,
           };
           if (!cities.find((e) => e.id === ciudad.id)) handleAddCity(ciudad);
-          else alert("La ciudad ya se encuentra en la lista")
+          else alert("La ciudad ya se encuentra en la lista");
           // handleAddCity(ciudad);
         } else {
           alert("Ciudad no encontrada");
         }
       });
-
   }
 
   // function onClose(id) {
@@ -73,17 +76,12 @@ function App() {
   // }
   return (
     <div className="App">
-      <Route
-        path='/'
-        render={() => <Nav onSearch={onSearch} />}
-      />
+      <Route path="/" render={() => <Nav onSearch={onSearch} />} />
       {/* <Nav onSearch={onSearch} /> */}
+      <Route path="/about" component={About} />
       <Route
-        path='/about'
-        component={About}
-      />
-      <Route
-        exact path='/'
+        exact
+        path="/"
         render={() => <Cards cities={cities} onClose={handleRemoveCity} />}
       />
       {/* <Route
@@ -95,10 +93,7 @@ function App() {
         />}
       /> */}
       {/* Usando useParams */}
-      <Route
-        path='/ciudad/:id'
-        component={Ciudad}
-      />
+      <Route path="/ciudad/:id" component={Ciudad} />
     </div>
   );
 }
